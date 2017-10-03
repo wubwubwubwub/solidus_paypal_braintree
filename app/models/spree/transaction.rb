@@ -1,6 +1,6 @@
 require 'active_model'
 
-module SolidusPaypalBraintree
+module Spree
   class Transaction
     include ActiveModel::Model
 
@@ -13,7 +13,7 @@ module SolidusPaypalBraintree
     validates :email, presence: true
 
     validate do
-      unless payment_method.is_a? SolidusPaypalBraintree::Gateway
+      unless payment_method.is_a? Spree::AppleGateway
         errors.add(:payment_method, 'Must be braintree')
       end
       if address && !address.valid?

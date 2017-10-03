@@ -3,8 +3,8 @@ SolidusPaypalBraintree = {
 
   config: {
     paths: {
-      clientTokens: Spree.pathFor('solidus_paypal_braintree/client_token'),
-      transactions: Spree.pathFor('solidus_paypal_braintree/transactions')
+      clientTokens: Spree.pathFor('client_token'),
+      transactions: Spree.pathFor('transactions')
     },
 
     // Override to provide your own error messages.

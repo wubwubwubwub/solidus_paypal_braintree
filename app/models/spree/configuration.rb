@@ -1,4 +1,4 @@
-class SolidusPaypalBraintree::Configuration < ApplicationRecord
+class Spree::Configuration < ApplicationRecord
   belongs_to :store, class_name: 'Spree::Store'
 
   validates :store, presence: true

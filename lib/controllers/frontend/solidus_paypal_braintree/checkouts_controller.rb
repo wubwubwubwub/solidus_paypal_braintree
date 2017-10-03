@@ -1,4 +1,4 @@
-class SolidusPaypalBraintree::CheckoutsController < Spree::CheckoutController
+class Spree::CheckoutsController < Spree::CheckoutController
   PERMITTED_PAYMENT_PARAMS = [
     :payment_method_id,
     source_attributes: [

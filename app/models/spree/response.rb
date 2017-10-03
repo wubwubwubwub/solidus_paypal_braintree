@@ -1,5 +1,5 @@
 # Response object that all actions on the gateway should return
-module SolidusPaypalBraintree
+module Spree
   class Response < ActiveMerchant::Billing::Response
     # def initialize(success, message, params = {}, options = {})
 

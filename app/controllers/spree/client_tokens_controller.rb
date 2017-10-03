@@ -1,4 +1,4 @@
-module SolidusPaypalBraintree
+module Spree
   class ClientTokensController < Spree::Api::BaseController
     skip_before_action :authenticate_user
 
@@ -12,9 +12,9 @@ module SolidusPaypalBraintree
 
     def load_gateway
       if params[:payment_method_id]
-        @gateway = ::SolidusPaypalBraintree::Gateway.find_by!(id: params[:payment_method_id])
+        @gateway = ::Spree::AppleGateway.find_by!(id: params[:payment_method_id])
       else
-        @gateway = ::SolidusPaypalBraintree::Gateway.find_by!(active: true)
+        @gateway = ::Spree::AppleGateway.find_by!(active: true)
       end
     end
   end

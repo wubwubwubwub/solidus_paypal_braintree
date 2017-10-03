@@ -1,4 +1,4 @@
-module SolidusPaypalBraintree
+module Spree
   class ConfigurationsController < Spree::Admin::BaseController
     helper Spree::Core::Engine.routes.url_helpers
 

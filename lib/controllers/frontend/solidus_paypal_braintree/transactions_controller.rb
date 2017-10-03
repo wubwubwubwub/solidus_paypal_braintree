@@ -1,4 +1,4 @@
-class SolidusPaypalBraintree::TransactionsController < Spree::StoreController
+class Spree::TransactionsController < Spree::StoreController
   class InvalidImportError < StandardError; end
 
   PERMITTED_BRAINTREE_TRANSACTION_PARAMS = [
@@ -13,8 +13,8 @@ class SolidusPaypalBraintree::TransactionsController < Spree::StoreController
   ]
 
   def create
-    transaction = SolidusPaypalBraintree::Transaction.new transaction_params
-    import = SolidusPaypalBraintree::TransactionImport.new(current_order, transaction)
+    transaction = Spree::Transaction.new transaction_params
+    import = Spree::TransactionImport.new(current_order, transaction)
 
     respond_to do |format|
       if import.valid?
@@ -56,6 +56,6 @@ class SolidusPaypalBraintree::TransactionsController < Spree::StoreController
   end
 
   def payment_method
-    SolidusPaypalBraintree::Gateway.find(params[:payment_method_id])
+    Spree::AppleGateway.find(params[:payment_method_id])
   end
 end

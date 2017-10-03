@@ -1,4 +1,4 @@
-module SolidusPaypalBraintree
+module Spree
   class Source < ApplicationRecord
     PAYPAL = "PayPalAccount"
     APPLE_PAY = "ApplePayCard"
@@ -8,7 +8,7 @@ module SolidusPaypalBraintree
     belongs_to :payment_method, class_name: 'Spree::PaymentMethod'
     has_many :payments, as: :source, class_name: "Spree::Payment"
 
-    belongs_to :customer, class_name: "SolidusPaypalBraintree::Customer"
+    belongs_to :customer, class_name: "Spree::Customer"
 
     validates :payment_type, inclusion: [PAYPAL, APPLE_PAY, CREDIT_CARD]
 

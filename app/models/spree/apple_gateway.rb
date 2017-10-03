@@ -1,7 +1,7 @@
 require 'braintree'
 
-module SolidusPaypalBraintree
-  class Gateway < ::Spree::PaymentMethod
+module Spree
+  class AppleGateway < ::Spree::PaymentMethod
     TOKEN_GENERATION_DISABLED_MESSAGE = 'Token generation is disabled.' \
       ' To re-enable set the `token_generation_enabled` preference on the' \
       ' gateway to `true`.'.freeze
@@ -149,7 +149,7 @@ module SolidusPaypalBraintree
     #
     # @api public
     # @param payment [Spree::Payment]
-    # @return [SolidusPaypalBraintree::Customer]
+    # @return [Spree::Customer]
     def create_profile(payment)
       source = payment.source
 

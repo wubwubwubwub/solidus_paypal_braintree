@@ -1,6 +1,6 @@
 require 'active_model'
 
-module SolidusPaypalBraintree
+module Spree
   class TransactionImport
     class InvalidImportError < StandardError; end
 
@@ -25,7 +25,7 @@ module SolidusPaypalBraintree
     end
 
     def source
-      SolidusPaypalBraintree::Source.new nonce: transaction.nonce,
+      Spree::Source.new nonce: transaction.nonce,
         payment_type: transaction.payment_type,
         payment_method: transaction.payment_method,
         user: user

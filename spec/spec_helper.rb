@@ -71,7 +71,7 @@ Braintree::Configuration.logger = Rails.logger
 
 module BraintreeHelpers
   def new_gateway(opts = {})
-    SolidusPaypalBraintree::Gateway.new({
+    Spree::AppleGateway.new({
       name: "Braintree",
       preferences: {
         environment: 'sandbox',
