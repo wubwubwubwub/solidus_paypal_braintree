@@ -23,7 +23,7 @@ SolidusPaypalBraintree.ApplepayButton = function(element, applepayOptions) {
  * See {@link https://braintree.github.io/braintree-web/3.9.0/Apple Pay.html#tokenize}
  */
 SolidusPaypalBraintree.ApplepayButton.prototype.initialize = function() {
-  if (window.ApplePaySession && ApplePaySession.canMakePayments()) {
+  if (window.ApplePaySession) {
     this._client = new SolidusPaypalBraintree.createClient(
       {
         useDataCollector: false,
