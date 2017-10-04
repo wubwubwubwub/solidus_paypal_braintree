@@ -38,7 +38,6 @@ SolidusPaypalBraintree.ApplepayButton.prototype.initialize = function() {
 SolidusPaypalBraintree.ApplepayButton.prototype.initializeCallback = function() {
   this._paymentMethodId = this._client.paymentMethodId;
   this._applePayInstance = this._client.getApplepayInstance();
-
   this._element.removeAttribute('disabled');
   this._element.classList.add("visible");
   this._element.addEventListener('click', function(event) {
@@ -98,7 +97,7 @@ SolidusPaypalBraintree.ApplepayButton.prototype._createTransaction = function (s
     data: this._transactionParams(payload, payment.shippingContact),
     dataType: 'json',
     type: 'POST',
-    url: SolidusPaypalBraintree.config.paths.transactions,
+    url: '/solidus_paypal_braintree/transactions',
     success: function(response) {
       session.completePayment(ApplePaySession.STATUS_SUCCESS);
       window.location.replace(response.redirectUrl);

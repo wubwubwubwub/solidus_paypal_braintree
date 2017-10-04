@@ -123,7 +123,7 @@ SolidusPaypalBraintree.Client.prototype._fetchToken = function() {
   var payload = {
     dataType: 'json',
     type: 'POST',
-    url: SolidusPaypalBraintree.config.paths.clientTokens,
+    url: '/solidus_paypal_braintree/client_token',
     error: function(xhr) {
       console.error("Error fetching braintree token");
     }
