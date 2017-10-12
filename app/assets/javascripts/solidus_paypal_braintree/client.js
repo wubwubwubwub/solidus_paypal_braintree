@@ -135,7 +135,7 @@ SolidusPaypalBraintree.Client.prototype._fetchToken = function() {
     };
   }
 
-  return Spree.ajax(payload);
+  return AppleSpree.ajax(payload);
 };
 
 SolidusPaypalBraintree.Client.prototype._createBraintreeInstance = function(tokenResponse) {

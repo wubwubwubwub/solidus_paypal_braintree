@@ -51,7 +51,7 @@ SolidusPaypalBraintree.PaypalButton.prototype._tokenizeCallback = function(token
 
   var params = this._transactionParams(payload);
 
-  return Spree.ajax({
+  return AppleSpree.ajax({
     url: SolidusPaypalBraintree.config.paths.transactions,
     type: 'POST',
     dataType: 'json',
@@ -111,4 +111,3 @@ SolidusPaypalBraintree.PaypalButton.prototype._addressParams = function(payload)
     "country_code" : payload.details.shippingAddress.countryCode
   }
 };
-
