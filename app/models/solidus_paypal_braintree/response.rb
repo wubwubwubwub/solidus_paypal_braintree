@@ -38,6 +38,7 @@ module SolidusPaypalBraintree
       end
 
       def error_message(result)
+        binding.pry
         if result.errors.any?
           result.errors.map { |e| "#{e.message} (#{e.code})" }.join(" ")
         else
